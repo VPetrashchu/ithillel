@@ -1,21 +1,23 @@
-from library import read_domains, read_surnames, read_author_dates, read_csv, write_to_file
+from library import read_domains, match_authors_list, read_author_dates, read_csv, write_to_file
 
-#Task 2
+# Task 2
 domains = read_domains("domains.txt")
 print("Domains:", domains)
 
-#Task3
-surnames = read_surnames("authors.txt")
-print("Surnames:", surnames)
+# Task 3
+authors_list = match_authors_list("authors.txt")
+print('Authors list: \n', '\n'.join(authors_list))
 
-#Task4
+
+# Task 4
 author_dates = read_author_dates("authors.txt")
-print("Author dates:", author_dates)
+print('Author dates:')
+for author in author_dates:
+    print(author['date'])
 
-#Task5
+# Task 5
 csv_data = read_csv("example.csv")
 print("CSV Data:", csv_data)
 
 write_to_file("modified_example.csv", csv_data)
-
 
