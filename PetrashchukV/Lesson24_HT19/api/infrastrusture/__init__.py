@@ -1,0 +1,1 @@
+from .characters_service import CharactersService
